@@ -9,6 +9,8 @@ datetime <- paste(data$Date, data$Time)
 data$Date_time <- strptime(datetime, format = "%d/%m/%Y %H:%M:%S")
 
 # Open the device
+if(!dir.exists("Figures")) dir.create("Figures")
+
 png(filename = "./Figures/plot4.png", width = 480, height = 480, units = "px")
 
 par(mfcol = c(2,2))

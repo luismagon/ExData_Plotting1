@@ -9,6 +9,7 @@ datetime <- paste(data$Date, data$Time)
 data$Date_time <- strptime(datetime, format = "%d/%m/%Y %H:%M:%S")
 
 # Open the device
+if(!dir.exists("Figures")) dir.create("Figures")
 png(filename = "./Figures/plot2.png", width = 480, height = 480, units = "px")
 
 plot(data$Date_time, data$Global_active_power, type = "l", 
